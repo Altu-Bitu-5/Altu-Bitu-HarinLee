@@ -36,7 +36,6 @@ pii makeGroundEven(int n, int m, int b, vector<vector<int>>& ground) {  //모든
     int minCost = INF;  //최소 비용
     int height = 0;  //높이
     
-    // 모든 높이를 다 만들어보고 최소 비용 찾기
     for (int i = 0; i < MAX_HEIGHT; i++) {  //최대 높이까지 둘러보는 동안
         int cost = calcCost(i, n, m, b, ground);  //비용 계산
         if (cost <= minCost) {  //비용이 최소비용보다 낮거나 같을 경우
@@ -48,15 +47,7 @@ pii makeGroundEven(int n, int m, int b, vector<vector<int>>& ground) {  //모든
     return {minCost, height};  //최소 비용과 그 높이를 리턴
 }
 
-/**
- * 블록 높이의 최댓값이 256밖에 되지 않으므로
- * 모든 칸을 높이 n(0~256)으로 만드는 모든 경우를 시도해보고
- * 그 중에서 비용이 최소가 될 때를 찾는다.
- *
- * 모든 칸을 높이 n으로 만드는
- */
-
-int main() {
+int main() {  //메인 함수
     int n, m, b;  //입력받기 위한 변수
     
     // 입력
@@ -72,5 +63,5 @@ int main() {
 
     cout << answer.first << " " << answer.second << "\n";  //결과 출력
 
-    return 0;
+    return 0;  //코드 끝
 }
